@@ -5,10 +5,19 @@
                  [ch.qos.logback/logback-classic "1.1.2" :exclusions [org.slf4j/slf4j-api]]
                  [org.slf4j/jul-to-slf4j "1.7.7"]
                  [org.slf4j/jcl-over-slf4j "1.7.7"]
-                 [org.slf4j/log4j-over-slf4j "1.7.7"]]
-  :min-lein-version "2.0.0"
-  :resource-paths ["config", "resources"]
-  :profiles {:dev {:aliases {"run-dev" ["trampoline" "run" "-m" "landing.server/run-dev"]}
-                   :dependencies [[io.pedestal/pedestal.service-tools "0.3.1"]]}}
-  :main ^{:skip-aot true} landing.server)
+                 [org.slf4j/log4j-over-slf4j "1.7.7"]
+                 [environ "0.5.0"]]
 
+  :min-lein-version "2.0.0"
+
+  :plugins [[environ/environ.lein "0.2.1"]]
+
+  :resource-paths ["config", "resources"]
+
+  :profiles {:dev {:aliases {"run-dev" ["trampoline" "run" "-m" "landing.server/run-dev"]}
+                   :dependencies [[io.pedestal/pedestal.service-tools "0.3.1"]]}
+             :production {:env {:production true}}}
+
+  :uberjar-name "ignition-landing-standalone.jar"
+
+  :main ^{:skip-aot true} landing.server)
