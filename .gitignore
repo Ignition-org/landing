@@ -1,3 +1,6 @@
 target/
 tmp/
 logs/
+/pom.xml
+/.lein-*
+/.env
