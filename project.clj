@@ -19,5 +19,6 @@
              :production {:env {:production true}}}
 
   :uberjar-name "ignition-landing-standalone.jar"
+  :uberjar {:aot :all}
 
   :main ^{:skip-aot true} landing.server)
