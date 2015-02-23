@@ -16,6 +16,6 @@
 
   :profiles {:dev {:aliases {"run-dev" ["trampoline" "run" "-m" "landing.server/run-dev"]}
                    :dependencies [[io.pedestal/pedestal.service-tools "0.3.1"]]}
-             }
+             :production {:env {:production true}}}
 
   :main ^{:skip-aot true} landing.server)
