@@ -45,5 +45,5 @@
               ;; Either :jetty, :immutant or :tomcat (see comments in project.clj)
               ::bootstrap/type :jetty
               ;;::bootstrap/host "localhost"
-              ::bootstrap/port 80})
+              ::bootstrap/port 8080})
 
